@@ -1,7 +1,8 @@
-OTP Verification API
+# OTP Verification API
+
 This project provides a Django-based API focused on OTP (One-Time Password) verification, enabling secure user registration and login using a phone number. The API implements security features such as failed attempt tracking, IP-based blocking, and OTP session management.
 
-Features
+## Features
 User Registration: Registers users with their phone number and sends an OTP for verification.
 OTP Verification: Verifies the OTP to authenticate users.
 Login: Allows users to log in using a phone number and OTP or a password.
@@ -12,7 +13,7 @@ Django
 Django Rest Framework (DRF)
 SQLite (or any Django-supported database)
 Python 3.x
-API Endpoints
+## API Endpoints
 Register User
 Sends an OTP to the user's phone number for registration.
 Endpoint: /api/register/
@@ -69,7 +70,7 @@ Copy code
 {
    "message": "Login successful"
 }
-Setup and Installation
+## Setup and Installation
 Clone the repository:
 
 bash
@@ -101,13 +102,13 @@ python manage.py runserver
 Access the API:
 The API will be available at http://127.0.0.1:8000/api/.
 
-Security Features
+## Security Features
 IP-Based Blocking: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
 Session-Based OTP Storage: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
 Postman Collection
 A Postman collection is available for testing the API:
 
-Postman Collection Link
+## Postman Collection Link
 Future Enhancements
 Implement email-based OTP verification.
 Introduce rate limiting for enhanced security.
