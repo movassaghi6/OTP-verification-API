@@ -14,10 +14,10 @@ This project provides a Django-based API focused on OTP (One-Time Password) veri
 **Session-Based OTP Management**: Securely stores OTPs in user sessions for a limited time.
 
 ## Technologies
-Django
-Django Rest Framework (DRF)
-SQLite (or any Django-supported database)
-Python 3.x
+- Django
+- Django Rest Framework (DRF)
+- SQLite (or any Django-supported database)
+- Python 3.x
 ## API Endpoints
 Register User
 Sends an OTP to the user's phone number for registration.
