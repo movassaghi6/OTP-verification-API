@@ -20,59 +20,45 @@ This project provides a Django-based API focused on OTP (One-Time Password) veri
 - Python 3.x
 ## API Endpoints
 **Register User**
-Sends an OTP to the user's phone number for registration.
+- Sends an OTP to the user's phone number for registration.
 ```
 Endpoint: /api/register/
 Method: POST
 Request Body:
-
-json
-Copy code
 {
    "phone_number": "1234567890"
 }
 Response:
-
-json
-Copy code
 {
    "message": "OTP sent to phone number"
 }
-Verify OTP
-Verifies the OTP sent to the user's phone number.
+```
+**Verify OTP**
+- Verifies the OTP sent to the user's phone number.
+```
 Endpoint: /api/verify-otp/
 Method: POST
 Request Body:
-
-json
-Copy code
 {
    "phone_number": "1234567890",
    "code": "123456"
 }
 Response:
-
-json
-Copy code
 {
    "message": "OTP verified successfully, proceed to login"
 }
-Login User
-Authenticates the user with OTP or password.
+```
+**Login User**
+- Authenticates the user with OTP or password.
+```
 Endpoint: /api/login/
 Method: POST
 Request Body:
-
-json
-Copy code
 {
    "phone_number": "1234567890",
    "password": "123456"
 }
 Response:
-
-json
-Copy code
 {
    "message": "Login successful"
 }
