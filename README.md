@@ -64,45 +64,39 @@ Response:
 }
 ```
 ## Setup and Installation
-Clone the repository:
-
-bash
-Copy code
+- Clone the repository:
+```  
 git clone https://github.com/yourusername/otp-verification-api.git
 cd otp-verification-api
-Create a virtual environment:
-
-bash
-Copy code
+```
+- Create a virtual environment:
+```
 python3 -m venv env
 source env/bin/activate
-Install dependencies:
-
-bash
-Copy code
+```
+- Install dependencies:
+```
 pip install -r requirements.txt
-Apply migrations:
-
-bash
-Copy code
+```
+- Apply migrations:
+```
 python manage.py makemigrations accounts
-python manage.py migrate 
-Run the server:
-
-bash
-Copy code
+python manage.py migrate
+``` 
+- Run the server:
+```
 python manage.py runserver
-Access the API:
+```
+- Access the API:
 The API will be available at http://127.0.0.1:8000/api/.
 
 ## Security Features
-IP-Based Blocking: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
-Session-Based OTP Storage: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
-Postman Collection
-A Postman collection is available for testing the API:
+**IP-Based Blocking**: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
 
-## Postman Collection Link
-Future Enhancements
+**Session-Based OTP Storage**: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
+**Postman Collection**:
+A Postman collection is available for testing the API:
+## Future Enhancements
 Implement email-based OTP verification.
 Introduce rate limiting for enhanced security.
 Add third-party SMS integration for OTP delivery.
