@@ -36,7 +36,7 @@ Response:
 **Verify OTP**
 - Verifies the OTP sent to the user's phone number.
 ```
-Endpoint: /accounts/verify-otp/
+Endpoint: /accounts/verify/
 Method: POST
 Request Body:
 {
@@ -87,8 +87,6 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
-- Access the API:
-The API will be available at http://127.0.0.1:8000/api/.
 
 ## Security Features
 **IP-Based Blocking**: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
