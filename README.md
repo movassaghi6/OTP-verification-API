@@ -22,7 +22,7 @@ This project provides a Django-based API focused on OTP (One-Time Password) veri
 **Register User**
 - Sends an OTP to the user's phone number for registration.
 ```
-Endpoint: /api/register/
+Endpoint: /accounts/register/
 Method: POST
 Request Body:
 {
@@ -36,7 +36,7 @@ Response:
 **Verify OTP**
 - Verifies the OTP sent to the user's phone number.
 ```
-Endpoint: /api/verify-otp/
+Endpoint: /accounts/verify-otp/
 Method: POST
 Request Body:
 {
@@ -51,7 +51,7 @@ Response:
 **Login User**
 - Authenticates the user with OTP or password.
 ```
-Endpoint: /api/login/
+Endpoint: /accounts/login/
 Method: POST
 Request Body:
 {
@@ -94,9 +94,9 @@ The API will be available at http://127.0.0.1:8000/api/.
 **IP-Based Blocking**: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
 
 **Session-Based OTP Storage**: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
-**Postman Collection**:
-A Postman collection is available for testing the API:
 ## Future Enhancements
-Implement email-based OTP verification.
-Introduce rate limiting for enhanced security.
-Add third-party SMS integration for OTP delivery.
+- Implement email-based OTP verification.
+- 
+- Introduce rate limiting for enhanced security.
+
+- Add third-party SMS integration for OTP delivery.
