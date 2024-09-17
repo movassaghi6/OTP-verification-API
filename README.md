@@ -1,12 +1,114 @@
-instructions:
-   1.create a virtual environment in project's folder with:
-     - python -m venv venv
-   2.activate virtual environment with:
-     - venv/Scripts/activate
-   3.install requirements with:
-     - pip install -r requirements.txt
-   4.run migration commands with:
-     1- python manage.py makemigrations accounts
-     2- python manage.py migrate
-   5.run server with this command:
-     - python manage.py runserver
+OTP Verification API
+This project provides a Django-based API focused on OTP (One-Time Password) verification, enabling secure user registration and login using a phone number. The API implements security features such as failed attempt tracking, IP-based blocking, and OTP session management.
+
+Features
+User Registration: Registers users with their phone number and sends an OTP for verification.
+OTP Verification: Verifies the OTP to authenticate users.
+Login: Allows users to log in using a phone number and OTP or a password.
+Failed Attempt Protection: Blocks users after three failed login attempts for a period of time.
+Session-Based OTP Management: Securely stores OTPs in user sessions for a limited time.
+Technologies
+Django
+Django Rest Framework (DRF)
+SQLite (or any Django-supported database)
+Python 3.x
+API Endpoints
+Register User
+Sends an OTP to the user's phone number for registration.
+Endpoint: /api/register/
+Method: POST
+Request Body:
+
+json
+Copy code
+{
+   "phone_number": "1234567890"
+}
+Response:
+
+json
+Copy code
+{
+   "message": "OTP sent to phone number"
+}
+Verify OTP
+Verifies the OTP sent to the user's phone number.
+Endpoint: /api/verify-otp/
+Method: POST
+Request Body:
+
+json
+Copy code
+{
+   "phone_number": "1234567890",
+   "code": "123456"
+}
+Response:
+
+json
+Copy code
+{
+   "message": "OTP verified successfully, proceed to login"
+}
+Login User
+Authenticates the user with OTP or password.
+Endpoint: /api/login/
+Method: POST
+Request Body:
+
+json
+Copy code
+{
+   "phone_number": "1234567890",
+   "password": "123456"
+}
+Response:
+
+json
+Copy code
+{
+   "message": "Login successful"
+}
+Setup and Installation
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/otp-verification-api.git
+cd otp-verification-api
+Create a virtual environment:
+
+bash
+Copy code
+python3 -m venv env
+source env/bin/activate
+Install dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Apply migrations:
+
+bash
+Copy code
+python manage.py makemigrations accounts
+python manage.py migrate 
+Run the server:
+
+bash
+Copy code
+python manage.py runserver
+Access the API:
+The API will be available at http://127.0.0.1:8000/api/.
+
+Security Features
+IP-Based Blocking: Users are blocked for one hour after three consecutive failed login attempts, based on their IP address.
+Session-Based OTP Storage: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
+Postman Collection
+A Postman collection is available for testing the API:
+
+Postman Collection Link
+Future Enhancements
+Implement email-based OTP verification.
+Introduce rate limiting for enhanced security.
+Add third-party SMS integration for OTP delivery.
