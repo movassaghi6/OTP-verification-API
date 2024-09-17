@@ -96,7 +96,7 @@ The API will be available at http://127.0.0.1:8000/api/.
 **Session-Based OTP Storage**: OTPs are securely stored in user sessions for temporary access, ensuring sensitive data is protected.
 ## Future Enhancements
 - Implement email-based OTP verification.
-- 
+
 - Introduce rate limiting for enhanced security.
 
 - Add third-party SMS integration for OTP delivery.
