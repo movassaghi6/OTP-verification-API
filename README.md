@@ -19,8 +19,9 @@ This project provides a Django-based API focused on OTP (One-Time Password) veri
 - SQLite (or any Django-supported database)
 - Python 3.x
 ## API Endpoints
-Register User
+**Register User**
 Sends an OTP to the user's phone number for registration.
+```
 Endpoint: /api/register/
 Method: POST
 Request Body:
@@ -75,6 +76,7 @@ Copy code
 {
    "message": "Login successful"
 }
+```
 ## Setup and Installation
 Clone the repository:
 
